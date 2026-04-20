@@ -115,38 +115,24 @@
       margin-bottom: 0.75rem;
     }
 
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 8px;
+    .chapter-list { list-style: none; }
+
+    .chapter-item {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 7px 0;
+      border-bottom: 0.5px solid var(--border);
     }
 
-    .chapter-card {
-      background: var(--bg-card);
-      border: 0.5px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 0.85rem 1rem;
-      border-left-width: 2.5px;
-      border-left-style: solid;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      transition: border-color 0.15s, transform 0.1s;
-    }
+    .chapter-item:last-child { border-bottom: none; }
 
-    .chapter-card:hover { border-color: var(--border-strong); transform: translateY(-1px); }
+    .card-num { font-size: 11px; color: var(--text-tertiary); min-width: 20px; flex-shrink: 0; }
+    .card-name { font-size: 13px; font-weight: 500; color: var(--text-primary); flex: 1; }
+    .card-source { font-size: 11px; color: var(--text-tertiary); white-space: nowrap; }
 
-    .card-top { display: flex; align-items: center; gap: 8px; margin-bottom: 3px; }
-    .card-num { font-size: 10px; color: var(--text-tertiary); min-width: 18px; }
-    .card-icon { font-size: 13px; line-height: 1; }
-    .card-name { font-size: 12px; font-weight: 500; color: var(--text-primary); line-height: 1.4; }
-    .card-source { font-size: 11px; color: var(--text-tertiary); margin-left: 26px; }
-
-    .theme-global { border-left-color: #378ADD; }
-    .theme-cyber  { border-left-color: #185FA5; }
-    .theme-ia     { border-left-color: #1D9E75; }
-    .theme-quant  { border-left-color: #7F77DD; }
-    .theme-pano   { border-left-color: #BA7517; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.75rem; }
+    .two-col .chapter-group { margin-bottom: 0; }
 
     /* ── FOOTER ── */
     footer {
@@ -175,7 +161,7 @@
       .page { padding: 2rem 1.25rem 3rem; }
       h1 { font-size: 22px; }
       .hero { padding: 1.75rem 1.5rem 1.5rem; }
-      .cards-grid { grid-template-columns: 1fr; }
+      .two-col { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -219,78 +205,50 @@
   <div class="nav-section">
     <p class="section-label">Toutes les vues de cette présentation</p>
 
-    <div class="chapter-group">
-      <div class="group-title">Données globales</div>
-      <div class="cards-grid">
-        <div class="chapter-card theme-global">
-          <div class="card-top"><span class="card-num">01</span><span class="card-icon">📈</span><span class="card-name">Évolution des publications par année</span></div>
-          <div class="card-source">Source : DBLP</div>
-        </div>
-        <div class="chapter-card theme-global">
-          <div class="card-top"><span class="card-num">02</span><span class="card-icon">🏛</span><span class="card-name">Contributions Inria par année et par conférence</span></div>
-          <div class="card-source">Source : HAL</div>
-        </div>
+    <!-- Ligne 1 : Données globales + Cybersécurité -->
+    <div class="two-col">
+      <div class="chapter-group">
+        <div class="group-title">Données globales</div>
+        <ul class="chapter-list">
+          <li class="chapter-item"><span class="card-num">01</span><span class="card-name">Évolution des publications par année</span><span class="card-source">DBLP</span></li>
+          <li class="chapter-item"><span class="card-num">02</span><span class="card-name">Contributions Inria par année et par conférence</span><span class="card-source">HAL</span></li>
+        </ul>
+      </div>
+      <div class="chapter-group">
+        <div class="group-title">Cybersécurité</div>
+        <ul class="chapter-list">
+          <li class="chapter-item"><span class="card-num">03</span><span class="card-name">Évolution des publications par année</span><span class="card-source">DBLP</span></li>
+          <li class="chapter-item"><span class="card-num">04</span><span class="card-name">Contributions Inria par année et par conférence</span><span class="card-source">HAL</span></li>
+          <li class="chapter-item"><span class="card-num">05</span><span class="card-name">Contributions par affiliations et par année</span><span class="card-source">DBLP · OpenAlex</span></li>
+        </ul>
       </div>
     </div>
 
-    <div class="chapter-group">
-      <div class="group-title">Cybersécurité</div>
-      <div class="cards-grid">
-        <div class="chapter-card theme-cyber">
-          <div class="card-top"><span class="card-num">03</span><span class="card-icon">📈</span><span class="card-name">Évolution des publications par année</span></div>
-          <div class="card-source">Source : DBLP</div>
-        </div>
-        <div class="chapter-card theme-cyber">
-          <div class="card-top"><span class="card-num">04</span><span class="card-icon">🏛</span><span class="card-name">Contributions Inria par année et par conférence</span></div>
-          <div class="card-source">Source : HAL</div>
-        </div>
-        <div class="chapter-card theme-cyber">
-          <div class="card-top"><span class="card-num">05</span><span class="card-icon">🔗</span><span class="card-name">Contributions par affiliations et par année</span></div>
-          <div class="card-source">Sources : DBLP · OpenAlex</div>
-        </div>
+    <!-- Ligne 2 : IA + Quantique -->
+    <div class="two-col">
+      <div class="chapter-group">
+        <div class="group-title">Intelligence artificielle</div>
+        <ul class="chapter-list">
+          <li class="chapter-item"><span class="card-num">06</span><span class="card-name">Évolution des publications par année</span><span class="card-source">DBLP</span></li>
+          <li class="chapter-item"><span class="card-num">07</span><span class="card-name">Contributions Inria par année et par conférence</span><span class="card-source">HAL</span></li>
+        </ul>
+      </div>
+      <div class="chapter-group">
+        <div class="group-title">Quantique</div>
+        <ul class="chapter-list">
+          <li class="chapter-item"><span class="card-num">08</span><span class="card-name">Évolution des publications par année</span><span class="card-source">DBLP</span></li>
+          <li class="chapter-item"><span class="card-num">09</span><span class="card-name">Contributions Inria par année et par conférence</span><span class="card-source">HAL</span></li>
+        </ul>
       </div>
     </div>
 
-    <div class="chapter-group">
-      <div class="group-title">Intelligence artificielle</div>
-      <div class="cards-grid">
-        <div class="chapter-card theme-ia">
-          <div class="card-top"><span class="card-num">06</span><span class="card-icon">📈</span><span class="card-name">Évolution des publications par année</span></div>
-          <div class="card-source">Source : DBLP</div>
-        </div>
-        <div class="chapter-card theme-ia">
-          <div class="card-top"><span class="card-num">07</span><span class="card-icon">🏛</span><span class="card-name">Contributions Inria par année et par conférence</span></div>
-          <div class="card-source">Source : HAL</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="chapter-group">
-      <div class="group-title">Informatique quantique</div>
-      <div class="cards-grid">
-        <div class="chapter-card theme-quant">
-          <div class="card-top"><span class="card-num">08</span><span class="card-icon">📈</span><span class="card-name">Évolution des publications par année</span></div>
-          <div class="card-source">Source : DBLP</div>
-        </div>
-        <div class="chapter-card theme-quant">
-          <div class="card-top"><span class="card-num">09</span><span class="card-icon">🏛</span><span class="card-name">Contributions Inria par année et par conférence</span></div>
-          <div class="card-source">Source : HAL</div>
-        </div>
-      </div>
-    </div>
-
+    <!-- Ligne 3 : Panorama -->
     <div class="chapter-group">
       <div class="group-title">Panorama des conférences</div>
-      <div class="cards-grid">
-        <div class="chapter-card theme-pano">
-          <div class="card-top"><span class="card-num">10</span><span class="card-icon">🗺</span><span class="card-name">Panorama des conférences scientifiques en cybersécurité, IA &amp; quantique</span></div>
-          <div class="card-source">Source : DBLP</div>
-        </div>
-        <div class="chapter-card theme-pano">
-          <div class="card-top"><span class="card-num">11</span><span class="card-icon">🗺</span><span class="card-name">Panorama des conférences scientifiques — suite</span></div>
-          <div class="card-source">Source : DBLP</div>
-        </div>
-      </div>
+      <ul class="chapter-list">
+        <li class="chapter-item"><span class="card-num">10</span><span class="card-name">Panorama des conférences scientifiques en cybersécurité, IA &amp; quantique</span><span class="card-source">DBLP</span></li>
+        <li class="chapter-item"><span class="card-num">11</span><span class="card-name">Panorama des conférences scientifiques — suite</span><span class="card-source">DBLP</span></li>
+      </ul>
     </div>
   </div>
 
