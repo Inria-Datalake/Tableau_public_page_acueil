@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conférences — Cybersécurité, IA & Quantique (2021–2025)</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue-50: #E6F1FB;
+      --blue-100: #B5D4F4;
+      --blue-600: #185FA5;
+      --blue-800: #0C447C;
+      --blue-900: #042C53;
+      --teal-50: #E1F5EE;
+      --teal-600: #0F6E56;
+      --teal-800: #085041;
+      --purple-50: #EEEDFE;
+      --purple-600: #534AB7;
+      --purple-800: #3C3489;
+      --amber-50: #FAEEDA;
+      --amber-600: #854F0B;
+      --coral-50: #FAECE7;
+      --coral-600: #993C1D;
+      --gray-50: #F1EFE8;
+      --gray-100: #D3D1C7;
+      --gray-600: #5F5E5A;
+      --gray-800: #444441;
+      --gray-900: #2C2C2A;
+      --text-primary: #1a1a18;
+      --text-secondary: #5F5E5A;
+      --text-tertiary: #888780;
+      --bg: #F7F6F2;
+      --bg-card: #FFFFFF;
+      --border: rgba(0,0,0,0.10);
+      --border-strong: rgba(0,0,0,0.18);
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      color: var(--text-primary);
+      background: var(--bg);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── LAYOUT ── */
+    .page-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--bg-card);
+      border-bottom: 0.5px solid var(--border);
+      padding: 0;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 2rem 1.75rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .header-left { flex: 1; min-width: 280px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--blue-600);
+      background: var(--blue-50);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+    }
+
+    .intro {
+      font-size: 14px;
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    .meta-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .header-tags {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-top: 0.25rem;
+    }
+
+    .domain-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .tag-cyber { background: var(--blue-50); color: var(--blue-800); }
+    .tag-ia    { background: var(--teal-50); color: var(--teal-800); }
+    .tag-quant { background: var(--purple-50); color: var(--purple-800); }
+    .tag-dot { width: 6px; height: 6px; border-radius: 50%; }
+    .tag-cyber .tag-dot { background: var(--blue-600); }
+    .tag-ia    .tag-dot { background: var(--teal-600); }
+    .tag-quant .tag-dot { background: var(--purple-600); }
+
+    /* ── MAIN VIZ ── */
+    .main-viz-section {
+      margin-top: 2.5rem;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+    }
+
+    .viz-card {
+      background: var(--bg-card);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    .viz-header {
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 0.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .viz-title-block h2 {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .viz-title-block p {
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    .source-badge {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      background: var(--gray-50);
+      color: var(--gray-600);
+      border: 0.5px solid var(--border);
+      font-weight: 500;
+    }
+
+    .tableau-wrapper {
+      width: 100%;
+      overflow: hidden;
+      background: #fafafa;
+    }
+
+    .tableau-wrapper .tableauPlaceholder {
+      width: 100% !important;
+    }
+
+    /* ── NAV GRID ── */
+    .nav-section {
+      margin-top: 2.5rem;
+    }
+
+    .chapters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 10px;
+    }
+
+    .chapter-group {
+      margin-bottom: 2rem;
+    }
+
+    .group-title {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-tertiary);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .chapter-card {
+      background: var(--bg-card);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1.1rem;
+      cursor: pointer;
+      transition: border-color 0.15s, transform 0.1s;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .chapter-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+    }
+
+    .chapter-card-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .chapter-num {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      min-width: 18px;
+    }
+
+    .chapter-icon {
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .chapter-name {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .chapter-source {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      margin-left: 26px;
+      margin-top: 2px;
+    }
+
+    .chapter-card.theme-global { border-left: 2.5px solid #378ADD; }
+    .chapter-card.theme-cyber  { border-left: 2.5px solid #185FA5; }
+    .chapter-card.theme-ia     { border-left: 2.5px solid #1D9E75; }
+    .chapter-card.theme-quant  { border-left: 2.5px solid #7F77DD; }
+    .chapter-card.theme-pano   { border-left: 2.5px solid #BA7517; }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-left {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      line-height: 1.6;
+    }
+
+    .footer-sources {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .source-pill {
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 12px;
+      border: 0.5px solid var(--border-strong);
+      color: var(--text-secondary);
+      background: var(--bg-card);
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 22px; }
+      .header-inner { flex-direction: column; }
+      .header-tags { flex-direction: row; flex-wrap: wrap; }
+      .chapters-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="eyebrow">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" fill="#185FA5"/></svg>
+        Tableau de bord · Recherche académique
+      </div>
+      <h1>Conférences — Cybersécurité,<br>IA &amp; Quantique</h1>
+      <p class="intro">
+        Exploration des tendances de publication académique dans trois domaines stratégiques en pleine convergence.
+        Ce tableau de bord recense et analyse les contributions scientifiques présentées en conférences entre 2021 et 2025,
+        avec un focus sur les apports de l'Inria.
+      </p>
+      <div class="meta-row">
+        <div class="meta-item">
+          <span class="meta-dot" style="background:#378ADD"></span>
+          Sources : DBLP · HAL · OpenAlex
+        </div>
+        <div class="meta-item">
+          <span class="meta-dot" style="background:#1D9E75"></span>
+          Période couverte : 2021 – 2025
+        </div>
+        <div class="meta-item">
+          <span class="meta-dot" style="background:#7F77DD"></span>
+          11 vues analytiques
+        </div>
+      </div>
+    </div>
+    <div class="header-tags">
+      <div class="domain-tag tag-cyber"><span class="tag-dot"></span> Cybersécurité</div>
+      <div class="domain-tag tag-ia"><span class="tag-dot"></span> Intelligence artificielle</div>
+      <div class="domain-tag tag-quant"><span class="tag-dot"></span> Informatique quantique</div>
+    </div>
+  </div>
+</header>
+
+<div class="page-wrapper">
+
+  <!-- ── VIZ PRINCIPALE ── -->
+  <div class="main-viz-section">
+    <p class="section-label">Vue d'ensemble — visualisation interactive</p>
+    <div class="viz-card">
+      <div class="viz-header">
+        <div class="viz-title-block">
+          <h2>Données globales — Évolution des publications par année</h2>
+          <p>Toutes conférences confondues · Cybersécurité, IA et Quantique</p>
+        </div>
+        <span class="source-badge">Source : DBLP</span>
+      </div>
+      <div class="tableau-wrapper">
+        <div class='tableauPlaceholder' id='viz1776684872084' style='position: relative; width:100%;'>
+          <noscript>
+            <a href='#'>
+              <img alt='Conférences - Cybersécurité, IA et Quantique (2021-2025)'
+                   src='https://public.tableau.com/static/images/Co/Confrences-CyberscuritIAetQuantique2021-2025/Histoire2/1_rss.png'
+                   style='border: none; width:100%;' />
+            </a>
+          </noscript>
+          <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='Confrences-CyberscuritIAetQuantique2021-2025&#47;Histoire2' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https://public.tableau.com/static/images/Co/Confrences-CyberscuritIAetQuantique2021-2025/Histoire2/1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='fr-FR' />
+          </object>
+        </div>
+        <script type='text/javascript'>
+          (function() {
+            var divElement = document.getElementById('viz1776684872084');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '100%';
+            vizElement.style.height = '700px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+          })();
+        </script>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── NAVIGATION PAR THÈME ── -->
+  <div class="nav-section">
+    <p class="section-label">Toutes les vues de cette présentation</p>
+
+    <!-- Données globales -->
+    <div class="chapter-group">
+      <div class="group-title">Données globales</div>
+      <div class="chapters-grid">
+        <div class="chapter-card theme-global">
+          <div class="chapter-card-top">
+            <span class="chapter-num">01</span>
+            <span class="chapter-icon">📈</span>
+            <span class="chapter-name">Évolution des publications par année</span>
+          </div>
+          <div class="chapter-source">Source : DBLP</div>
+        </div>
+        <div class="chapter-card theme-global">
+          <div class="chapter-card-top">
+            <span class="chapter-num">02</span>
+            <span class="chapter-icon">🏛</span>
+            <span class="chapter-name">Contributions Inria par année et par conférence</span>
+          </div>
+          <div class="chapter-source">Source : HAL</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cybersécurité -->
+    <div class="chapter-group">
+      <div class="group-title">Cybersécurité</div>
+      <div class="chapters-grid">
+        <div class="chapter-card theme-cyber">
+          <div class="chapter-card-top">
+            <span class="chapter-num">03</span>
+            <span class="chapter-icon">📈</span>
+            <span class="chapter-name">Évolution des publications par année</span>
+          </div>
+          <div class="chapter-source">Source : DBLP</div>
+        </div>
+        <div class="chapter-card theme-cyber">
+          <div class="chapter-card-top">
+            <span class="chapter-num">04</span>
+            <span class="chapter-icon">🏛</span>
+            <span class="chapter-name">Contributions Inria par année et par conférence</span>
+          </div>
+          <div class="chapter-source">Source : HAL</div>
+        </div>
+        <div class="chapter-card theme-cyber">
+          <div class="chapter-card-top">
+            <span class="chapter-num">05</span>
+            <span class="chapter-icon">🔗</span>
+            <span class="chapter-name">Contributions par affiliations et par année</span>
+          </div>
+          <div class="chapter-source">Sources : DBLP · OpenAlex</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intelligence artificielle -->
+    <div class="chapter-group">
+      <div class="group-title">Intelligence artificielle</div>
+      <div class="chapters-grid">
+        <div class="chapter-card theme-ia">
+          <div class="chapter-card-top">
+            <span class="chapter-num">06</span>
+            <span class="chapter-icon">📈</span>
+            <span class="chapter-name">Évolution des publications par année</span>
+          </div>
+          <div class="chapter-source">Source : DBLP</div>
+        </div>
+        <div class="chapter-card theme-ia">
+          <div class="chapter-card-top">
+            <span class="chapter-num">07</span>
+            <span class="chapter-icon">🏛</span>
+            <span class="chapter-name">Contributions Inria par année et par conférence</span>
+          </div>
+          <div class="chapter-source">Source : HAL</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quantique -->
+    <div class="chapter-group">
+      <div class="group-title">Informatique quantique</div>
+      <div class="chapters-grid">
+        <div class="chapter-card theme-quant">
+          <div class="chapter-card-top">
+            <span class="chapter-num">08</span>
+            <span class="chapter-icon">📈</span>
+            <span class="chapter-name">Évolution des publications par année</span>
+          </div>
+          <div class="chapter-source">Source : DBLP</div>
+        </div>
+        <div class="chapter-card theme-quant">
+          <div class="chapter-card-top">
+            <span class="chapter-num">09</span>
+            <span class="chapter-icon">🏛</span>
+            <span class="chapter-name">Contributions Inria par année et par conférence</span>
+          </div>
+          <div class="chapter-source">Source : HAL</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panorama -->
+    <div class="chapter-group">
+      <div class="group-title">Panorama des conférences</div>
+      <div class="chapters-grid">
+        <div class="chapter-card theme-pano">
+          <div class="chapter-card-top">
+            <span class="chapter-num">10</span>
+            <span class="chapter-icon">🗺</span>
+            <span class="chapter-name">Panorama des conférences scientifiques en cybersécurité, IA &amp; quantique</span>
+          </div>
+          <div class="chapter-source">Source : DBLP</div>
+        </div>
+        <div class="chapter-card theme-pano">
+          <div class="chapter-card-top">
+            <span class="chapter-num">11</span>
+            <span class="chapter-icon">🗺</span>
+            <span class="chapter-name">Panorama des conférences scientifiques — suite</span>
+          </div>
+          <div class="chapter-source">Source : DBLP</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-left">
+      Données issues de sources académiques ouvertes · Analyse et visualisation réalisées avec Tableau Public<br>
+      Période couverte : 2021 – 2025 · Usage : recherche &amp; veille scientifique
+    </div>
+    <div class="footer-sources">
+      <span class="source-pill">DBLP</span>
+      <span class="source-pill">HAL</span>
+      <span class="source-pill">OpenAlex</span>
+      <span class="source-pill">Tableau Public</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
