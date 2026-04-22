@@ -109,7 +109,7 @@
     /* ── IDENTITY ROW ── */
     .identity {
       display: grid;
-      grid-template-columns: 360px 1fr 1fr;
+      grid-template-columns: 360px;
       border-bottom: 1px solid var(--border);
     }
 
@@ -492,27 +492,6 @@
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <div class="sidebar-icon" title="Menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-        <line x1="3" y1="6" x2="21" y2="6"/>
-        <line x1="3" y1="12" x2="21" y2="12"/>
-        <line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
-    </div>
-    <div class="sidebar-icon" title="Vues">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-        <rect x="3" y="3" width="7" height="7" rx="1"/>
-        <rect x="14" y="3" width="7" height="7" rx="1"/>
-        <rect x="3" y="14" width="7" height="7" rx="1"/>
-        <rect x="14" y="14" width="7" height="7" rx="1"/>
-      </svg>
-    </div>
-    <div class="sidebar-icon" title="Recherche">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-        <circle cx="11" cy="11" r="7"/>
-        <line x1="16.5" y1="16.5" x2="22" y2="22"/>
-      </svg>
-    </div>
     <div class="sidebar-spacer"></div>
     <div class="sidebar-lang">FR</div>
   </aside>
@@ -523,10 +502,6 @@
     <!-- TOP NAV -->
     <nav class="topnav">
       <a class="topnav-link active" href="#">Tableau de bord</a>
-      <div class="topnav-sep"></div>
-      <a class="topnav-link" href="#">Cybersécurité</a>
-      <a class="topnav-link" href="#">Intelligence artificielle</a>
-      <a class="topnav-link" href="#">Quantique</a>
       <div class="topnav-spacer"></div>
       <span class="topnav-group">Groupe Datalake · Inria</span>
     </nav>
@@ -547,29 +522,7 @@
         </p>
       </div>
 
-      <div class="identity-card anim anim-2">
-        <div class="card-accent-line"></div>
-        <div class="card-eyebrow">Données &amp; Analyses</div>
-        <div class="card-title">Publications<br>&amp; conférences</div>
-        <div class="card-arrow">
-          Explorer
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </div>
-      </div>
 
-      <div class="identity-card anim anim-3">
-        <div class="card-accent-line"></div>
-        <div class="card-eyebrow">Visualisations</div>
-        <div class="card-title">9 vues<br>analytiques</div>
-        <div class="card-arrow">
-          Tableau Public
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </div>
-      </div>
     </div>
 
     <!-- HERO -->
@@ -577,7 +530,7 @@
 
       <div class="hero-label-col anim anim-2">
         <div class="hero-label">
-          Conférences<br>&amp; publications<br>académiques
+          Conférences<br>&amp; publications<br>
         </div>
         <div class="hero-meta">
           <div class="hero-meta-item">
@@ -603,7 +556,7 @@
         <h1>Cybersécurité,<br>IA &amp; Quantique</h1>
         <p class="intro">
           Analyse des publications académiques dans les domaines de la
-          cybersécurité, de l'intelligence artificielle et de l'informatique
+          cybersécurité, de l'intelligence artificielle et de la
           quantique, issues de sources ouvertes sur la période 2021–2025.
         </p>
         <p class="experiment-note">
@@ -622,54 +575,54 @@
     <div class="section-block anim anim-4">
       <div class="section-header">
         <div class="section-title">Vues analytiques</div>
-        <div class="section-count">9 tableaux</div>
+        <div class="section-count">9 Graphiques</div>
       </div>
 
       <div class="analytics-grid">
         <div class="analytic-item">
           <div class="analytic-num">01</div>
-          <div class="analytic-name">Évolution des publications par domaine</div>
-          <div class="analytic-src">DBLP · HAL · OpenAlex</div>
+          <div class="analytic-name">Données globales - Evolution des publications par années</div>
+          <div class="analytic-src">DBLP</div>
         </div>
         <div class="analytic-item">
           <div class="analytic-num">02</div>
-          <div class="analytic-name">Top conférences par volume de publications</div>
-          <div class="analytic-src">DBLP · OpenAlex</div>
+          <div class="analytic-name">Données globales -  Contributions Inria par années et par conférences</div>
+          <div class="analytic-src">HAL</div>
         </div>
         <div class="analytic-item">
           <div class="analytic-num">03</div>
-          <div class="analytic-name">Répartition géographique des auteurs</div>
-          <div class="analytic-src">HAL · OpenAlex</div>
+          <div class="analytic-name">Cybersécurité - Evolution des publications par années</div>
+          <div class="analytic-src">DBLP</div>
         </div>
         <div class="analytic-item">
           <div class="analytic-num">04</div>
-          <div class="analytic-name">Collaborations inter-institutions</div>
-          <div class="analytic-src">HAL · OpenAlex</div>
+          <div class="analytic-name">Cybersécurité - Contributions Inria par année et par conférence</div>
+          <div class="analytic-src">HAL</div>
         </div>
         <div class="analytic-item">
           <div class="analytic-num">05</div>
-          <div class="analytic-name">Mots-clés émergents par année</div>
-          <div class="analytic-src">DBLP · HAL</div>
+          <div class="analytic-name">Cybersécurité - Contribution par affiliations et par années </div>
+          <div class="analytic-src">DBLP · OPENALEX</div>
         </div>
         <div class="analytic-item">
           <div class="analytic-num">06</div>
-          <div class="analytic-name">Citations et impact scientifique</div>
-          <div class="analytic-src">OpenAlex</div>
+          <div class="analytic-name">IA - Evolution des publications par années</div>
+          <div class="analytic-src">DBLP</div>
         </div>
         <div class="analytic-item">
           <div class="analytic-num">07</div>
-          <div class="analytic-name">Présence Inria dans les conférences majeures</div>
-          <div class="analytic-src">HAL · DBLP</div>
+          <div class="analytic-name">IA - Contributions Inria par année et par conférence</div>
+          <div class="analytic-src">HAL</div>
         </div>
         <div class="analytic-item">
           <div class="analytic-num">08</div>
-          <div class="analytic-name">Comparaison domaines : IA vs Cybersécurité</div>
-          <div class="analytic-src">DBLP · OpenAlex</div>
+          <div class="analytic-name">Quantique - Evolution des publications par années</div>
+          <div class="analytic-src">DBLP</div>
         </div>
         <div class="analytic-item">
           <div class="analytic-num">09</div>
-          <div class="analytic-name">Tendances quantiques 2021–2025</div>
-          <div class="analytic-src">HAL · OpenAlex</div>
+          <div class="analytic-name">Quantique - Contributions Inria par année et par conférence</div>
+          <div class="analytic-src">HAL </div>
         </div>
       </div>
     </div>
